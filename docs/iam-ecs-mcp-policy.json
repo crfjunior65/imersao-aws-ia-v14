@@ -1,0 +1,27 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecs:ListClusters",
+        "ecs:DescribeClusters",
+        "ecs:ListServices",
+        "ecs:DescribeServices",
+        "ecs:ListTasks",
+        "ecs:DescribeTasks",
+        "ecs:DescribeTaskDefinition",
+        "ecs:ListTaskDefinitions",
+        "ecr:DescribeRepositories",
+        "ecr:ListImages",
+        "ecr:DescribeImages",
+        "ec2:DescribeInstances",
+        "ec2:DescribeSecurityGroups",
+        "logs:GetLogEvents",
+        "logs:FilterLogEvents",
+        "logs:DescribeLogGroups"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
