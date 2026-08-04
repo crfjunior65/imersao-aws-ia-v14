@@ -8,7 +8,8 @@ set -e
 
 # ─── Configurações ───────────────────────────────────────────
 REGION="us-east-1"
-ECR_REGISTRY="310189683227.dkr.ecr.us-east-1.amazonaws.com"
+ECR_REGISTRY="328113723783.dkr.ecr.us-east-1.amazonaws.com"
+#             310189683227.dkr.ecr.us-east-1.amazonaws.com"
 ECR_REPO="bia"
 REPOSITORY_URI="$ECR_REGISTRY/$ECR_REPO"
 
@@ -32,8 +33,8 @@ log_step()    { echo -e "\n${CYAN}${BOLD}>>> $1${NC}"; }
 selecionar_ambiente() {
   echo ""
   echo -e "${BOLD}Selecione o ambiente:${NC}"
-  echo "  1) Sem ALB  (cluster-bia / service-bia / task-def-bia)"
-  echo "  2) Com ALB  (cluster-bia-alb / service-bia-alb / task-def-bia-alb)"
+  echo "  1) Sem ALB  (cluster-bia / service-bia / task-bia)"
+  echo "  2) Com ALB  (cluster-bia / service-bia-alb / task-bia-alb)"
   echo ""
   read -rp "Opção [1/2]: " opcao_env
 
@@ -41,13 +42,13 @@ selecionar_ambiente() {
     1)
       CLUSTER="cluster-bia"
       SERVICE="service-bia"
-      TASK_FAMILY="task-def-bia"
+      TASK_FAMILY="task-bia"
       log_info "Ambiente selecionado: ${BOLD}Sem ALB${NC}"
       ;;
     2)
-      CLUSTER="cluster-bia-alb"
+      CLUSTER="cluster-bia"
       SERVICE="service-bia-alb"
-      TASK_FAMILY="task-def-bia-alb"
+      TASK_FAMILY="task-bia-alb"
       log_info "Ambiente selecionado: ${BOLD}Com ALB${NC}"
       ;;
     *)
